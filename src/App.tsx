@@ -1,6 +1,6 @@
 import './App.css'
-import BoardComponent from './components/BoardComponent.tsx'
 import { useEffect, useState } from 'react'
+import BoardComponent from './components/BoardComponent.tsx'
 import { Board } from './models/Board.ts'
 
 function App() {
@@ -13,20 +13,19 @@ function App() {
   function restart() {
     const newBoard = new Board()
     newBoard.initCells()
+    newBoard.addFigures()
     setBoard(newBoard)
   }
 
   return (
-    <>
-      <div className='app'>
-        <BoardComponent
-          board={board}
-          setBoard={setBoard}
-          // currentPlayer={currentPlayer}
-          // swapPlayer={swapPlayer}
-        />
-      </div>
-    </>
+    <div className='app'>
+      <BoardComponent
+        board={board}
+        setBoard={setBoard}
+        // currentPlayer={currentPlayer}
+        // swapPlayer={swapPlayer}
+      />
+    </div>
   )
 }
 

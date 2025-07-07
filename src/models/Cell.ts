@@ -1,11 +1,11 @@
-import type { Colors } from './Colors.ts'
-import type { Figure } from './figures/Figure.ts'
 import type { Board } from './Board.ts'
+import type { Color } from './Colors.ts'
+import type { Figure } from './figures/Figure.ts'
 
 export class Cell {
   readonly x: number
   readonly y: number
-  readonly color: Colors
+  readonly color: Color
   figure: Figure | null
   board: Board
   available: boolean
@@ -15,7 +15,7 @@ export class Cell {
     board: Board,
     x: number,
     y: number,
-    color: Colors,
+    color: Color,
     figure: Figure | null,
   ) {
     this.x = x
