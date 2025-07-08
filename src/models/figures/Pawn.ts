@@ -1,8 +1,8 @@
 import blackLogo from '../../assets/black-pawn.png'
 import whiteLogo from '../../assets/white-pawn.png'
-import type { Cell } from '../Cell.ts'
-import { type Color, Colors } from '../Colors.ts'
-import { Figure, FigureNames } from './Figure.ts'
+import type { Cell } from '../Cell'
+import { type Color, Colors } from '../Colors'
+import { Figure, FigureNames } from './Figure'
 
 export class Pawn extends Figure {
   isFirstStep = true

@@ -1,26 +1,26 @@
 import type logo from '../../assets/black-king.png'
-import type { Cell } from '../Cell.ts'
-import type { Color } from '../Colors.ts'
+import type { Cell } from '../Cell'
+import type { Color } from '../Colors'
 
 // Define a union type for figure names.
 export type FigureName =
-  | 'figure'
-  | 'king'
-  | 'knight'
-  | 'pawn'
-  | 'rook'
-  | 'bishop'
-  | 'queen'
+  | 'Figure'
+  | 'King'
+  | 'Knight'
+  | 'Pawn'
+  | 'Rook'
+  | 'Bishop'
+  | 'Queen'
 
 // Create a record that maps each key to its value
 export const FigureNames: Record<Uppercase<FigureName>, FigureName> = {
-  FIGURE: 'figure',
-  KING: 'king',
-  KNIGHT: 'knight',
-  PAWN: 'pawn',
-  ROOK: 'rook',
-  BISHOP: 'bishop',
-  QUEEN: 'queen',
+  FIGURE: 'Figure',
+  KING: 'King',
+  KNIGHT: 'Knight',
+  PAWN: 'Pawn',
+  ROOK: 'Rook',
+  BISHOP: 'Bishop',
+  QUEEN: 'Queen',
 }
 
 export class Figure {
@@ -47,7 +47,7 @@ export class Figure {
     )
   }
 
-  moveFigure(target: Cell): void {
+  moveFigure(target: Cell) {
     console.log(target, `"lysak"`)
   }
 }

@@ -1,4 +1,4 @@
-import type { Board } from '../models/Board.ts'
+import type { Board } from '../models/Board'
 
 export function serializeBoard(board: Board) {
   return board.cells.map((row) =>

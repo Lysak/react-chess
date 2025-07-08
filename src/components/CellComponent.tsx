@@ -1,5 +1,5 @@
 import type { FC } from 'react'
-import type { Cell } from '../models/Cell.ts'
+import type { Cell } from '../models/Cell'
 
 interface CellProps {
   cell: Cell

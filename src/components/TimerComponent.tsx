@@ -1,6 +1,6 @@
 import { type FC, useCallback, useEffect, useRef, useState } from 'react'
-import { Colors } from '../models/Colors.ts'
-import type { Player } from '../models/Player.ts'
+import { Colors } from '../models/Colors'
+import type { Player } from '../models/Player'
 
 interface TimerProps {
   currentPlayer: Player | null
@@ -49,8 +49,8 @@ const TimerComponent: FC<TimerProps> = ({ currentPlayer, restart }) => {
           Restart game
         </button>
       </div>
-      <h2>Black: {blackTime}</h2>
-      <h2>White: {whiteTime}</h2>
+      <h2>Black - {blackTime}</h2>
+      <h2>White - {whiteTime}</h2>
     </div>
   )
 }

@@ -1,18 +1,20 @@
-import './App.css'
 import { useCallback, useEffect, useState } from 'react'
-import BoardComponent from './components/BoardComponent.tsx'
+import './App.css'
+import BoardComponent from './components/BoardComponent'
 import LostFiguresComponent from './components/LostFiguresComponent.tsx'
 import TimerComponent from './components/TimerComponent.tsx'
-import { Board } from './models/Board.ts'
-import { Colors } from './models/Colors.ts'
-import { Player } from './models/Player.ts'
+import { Board } from './models/Board'
+import { Colors } from './models/Colors'
+import { Player } from './models/Player'
 
-function App() {
+const App = () => {
   const [board, setBoard] = useState(new Board())
-
   const [whitePlayer, setWhitePlayer] = useState(new Player(Colors.WHITE))
   const [blackPlayer, setBlackPlayer] = useState(new Player(Colors.BLACK))
   const [currentPlayer, setCurrentPlayer] = useState<Player | null>(null)
+
+  console.log(setWhitePlayer, `"lysak"`)
+  console.log(setBlackPlayer, `"lysak"`)
 
   const restart = useCallback(() => {
     const newBoard = new Board()
@@ -34,7 +36,7 @@ function App() {
 
   return (
     <div className='app'>
-      <TimerComponent currentPlayer={currentPlayer} restart={restart} />
+      <TimerComponent restart={restart} currentPlayer={currentPlayer} />
       <BoardComponent
         board={board}
         setBoard={setBoard}

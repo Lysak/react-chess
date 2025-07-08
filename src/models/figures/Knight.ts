@@ -1,8 +1,8 @@
+import { Figure, FigureNames } from './Figure'
+import { type Color, Colors } from '../Colors'
+import type { Cell } from '../Cell'
 import blackLogo from '../../assets/black-knight.png'
 import whiteLogo from '../../assets/white-knight.png'
-import type { Cell } from '../Cell.ts'
-import { type Color, Colors } from '../Colors.ts'
-import { Figure, FigureNames } from './Figure.ts'
 
 export class Knight extends Figure {
   constructor(color: Color, cell: Cell) {

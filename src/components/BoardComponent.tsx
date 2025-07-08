@@ -1,9 +1,9 @@
 import React, { type FC, useCallback, useEffect, useState } from 'react'
-import type { Board } from '../models/Board.ts'
-import type { Cell } from '../models/Cell.ts'
-import type { Player } from '../models/Player.ts'
-import { serializeBoard } from '../services/serializeService.ts'
-import CellComponent from './CellComponent.tsx'
+import type { Board } from '../models/Board'
+import type { Cell } from '../models/Cell'
+import type { Player } from '../models/Player'
+import { serializeBoard } from '../services/serializeService'
+import CellComponent from './CellComponent'
 
 interface BoardProps {
   board: Board
@@ -29,18 +29,15 @@ const BoardComponent: FC<BoardProps> = ({
       selectedCell.moveFigure(cell)
       swapPlayer()
       setSelectedCell(null)
+      updateBoard()
     } else {
       if (cell.figure?.color === currentPlayer?.color) {
         setSelectedCell(cell)
       }
-      setSelectedCell(cell)
     }
   }
 
-  const highlightCells = useCallback(() => {
-    if (!selectedCell) return
-
-    board.highlightCells(selectedCell)
+  const updateBoard = useCallback(() => {
     const newBoard = board.getCopyBoard()
 
     if (
@@ -49,7 +46,14 @@ const BoardComponent: FC<BoardProps> = ({
     ) {
       setBoard(newBoard)
     }
-  }, [selectedCell, board, setBoard])
+  }, [board, setBoard])
+
+  const highlightCells = useCallback(() => {
+    if (!selectedCell) return
+
+    board.highlightCells(selectedCell)
+    updateBoard()
+  }, [selectedCell, board, updateBoard])
 
   useEffect(() => {
     highlightCells()
