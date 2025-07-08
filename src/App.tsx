@@ -2,6 +2,7 @@ import './App.css'
 import { useCallback, useEffect, useState } from 'react'
 import BoardComponent from './components/BoardComponent.tsx'
 import LostFiguresComponent from './components/LostFiguresComponent.tsx'
+import TimerComponent from './components/TimerComponent.tsx'
 import { Board } from './models/Board.ts'
 import { Colors } from './models/Colors.ts'
 import { Player } from './models/Player.ts'
@@ -23,8 +24,6 @@ function App() {
   useEffect(() => {
     restart()
     setCurrentPlayer(whitePlayer)
-    console.log(setWhitePlayer, `"lysak"`)
-    console.log(setBlackPlayer, `"lysak"`)
   }, [whitePlayer, restart])
 
   function swapPlayer() {
@@ -35,6 +34,7 @@ function App() {
 
   return (
     <div className='app'>
+      <TimerComponent currentPlayer={currentPlayer} restart={restart} />
       <BoardComponent
         board={board}
         setBoard={setBoard}

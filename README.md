@@ -81,4 +81,9 @@ corepack use pnpm@latest-10
 ```
 TODO:
 king move
+if timer 0 - "you lost" message -> restart game
+checkmate condition, in canMove check if king under attack (...target) isKingUnderAttack() - availabe points
+
+move history
++ undo/redo
 ```
