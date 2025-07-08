@@ -77,3 +77,8 @@ sudo rm -R ./yarn-error.log
 sudo rm -R ./.pnpm-store
 corepack use pnpm@latest-10
 ```
+
+```
+TODO:
+king move
+```

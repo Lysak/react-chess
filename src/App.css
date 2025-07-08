@@ -73,6 +73,18 @@
   align-items: center;
 }
 
+button {
+  border-radius: unset !important;
+  border: unset !important;
+  padding: unset !important;
+  font-size: unset !important;
+  font-weight: unset !important;
+  font-family: unset !important;
+  cursor: unset !important;
+  transition: unset !important;
+  outline: none !important;
+}
+
 .cell img {
   width: 48px;
   height: 48px;
@@ -96,4 +108,11 @@
   width: 12px;
   border-radius: 50%;
   background-color: #22c022;
+}
+
+.lost {
+  height: calc(50vh);
+  padding: 30px;
+  margin-left: 50px;
+  background-color: lightgray;
 }

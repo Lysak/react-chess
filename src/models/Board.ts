@@ -1,6 +1,7 @@
 import { Cell } from './Cell.ts'
 import { Colors } from './Colors.ts'
 import { Bishop } from './figures/Bishop.ts'
+import type { Figure } from './figures/Figure.ts'
 import { King } from './figures/King.ts'
 import { Knight } from './figures/Knight.ts'
 import { Pawn } from './figures/Pawn.ts'
@@ -9,6 +10,8 @@ import { Rook } from './figures/Rook.ts'
 
 export class Board {
   cells: Cell[][] = []
+  lostBlackFigures: Figure[] = []
+  lostWhiteFigures: Figure[] = []
 
   public initCells() {
     for (let i = 0; i < 8; i++) {
@@ -28,6 +31,8 @@ export class Board {
   public getCopyBoard(): Board {
     const newBoard = new Board()
     newBoard.cells = this.cells
+    newBoard.lostWhiteFigures = this.lostWhiteFigures
+    newBoard.lostBlackFigures = this.lostBlackFigures
     return newBoard
   }
 
